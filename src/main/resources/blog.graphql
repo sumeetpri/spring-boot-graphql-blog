@@ -1,0 +1,28 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Query{
+    allPost: [Post]
+    post(id:String):Post
+    allUsers:[User]
+    user(id:String):User
+}
+
+type Post{
+    id:String
+    title:String
+    postedBy: String
+    content: String
+}
+
+type User{
+    id:String
+    name:String
+    email:String
+}
+
+type Mutation{
+    createPost( title: String ,postedBy:String,content:String ): Post!
+}
